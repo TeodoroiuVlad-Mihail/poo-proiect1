@@ -11,6 +11,26 @@ public final class Constants {
     public static final Integer CHECKSTYLE_POINTS = 10;
     public static final Integer TESTS_NUMBER_SMALL = 15;
 
+
+    //by me
+    public static final String TESTS_PATH = "tests/";
+    public static final String RESULT_PATH = "output";
+
+
+
+    public static final String INITIALDATA = "initialData";
+    public static final String NUMBEROFYEARS = "numberOfYears";
+    public static final String SANTABUDGET = "santaBudget";
+    public static final String CHILDREN = "children";
+    public static final String ID = "id";
+    public static final String LASTNAME = "lastName";
+    public static final String FIRSTNAME = "firstName";
+    public static final String AGE = "age";
+    public static final String CITY = "city";
+    public static final String NICESCORE = "niceScore";
+    public static final String GIFTSPREFERENCES = "giftsPreferences";
+
+
     private Constants() {
         //constructor for checkstyle
     }
