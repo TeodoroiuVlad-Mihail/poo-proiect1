@@ -71,4 +71,17 @@ public class Child {
     public void setGiftsPreferences(List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
+
+    @Override
+    public String toString() {
+        return "Child{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", age=" + age +
+                ", city='" + city + '\'' +
+                ", niceScore=" + niceScore +
+                ", giftsPreferences=" + giftsPreferences +
+                '}';
+    }
 }

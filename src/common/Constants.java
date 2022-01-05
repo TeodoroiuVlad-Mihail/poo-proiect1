@@ -30,6 +30,11 @@ public final class Constants {
     public static final String NICESCORE = "niceScore";
     public static final String GIFTSPREFERENCES = "giftsPreferences";
 
+    public static final String SANTAGIFTSLIST = "santaGiftsList";
+    public static final String PRODUCTNAME = "productName";
+    public static final String PRICE = "price";
+    public static final String CATEGORY = "category";
+
 
     private Constants() {
         //constructor for checkstyle

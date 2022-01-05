@@ -1,5 +1,6 @@
 package fileio;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,11 +14,11 @@ public final class Input {
 
     private final double santaBudgetData;
 
-    private final List<ChildrenInputData> childrenData;
+    private final ArrayList<ChildrenInputData> childrenData;
 
-    private final List<GiftsInputData> giftsData;
+    private final ArrayList<GiftsInputData> giftsData;
 
-    private final List<ChangesInputData> changesData;
+    private final ArrayList<ChangesInputData> changesData;
     /**
      * List of movies
      */
@@ -32,9 +33,9 @@ public final class Input {
     }
 
     public Input(final double numberOfYears, final double santaBudget,
-                 final List<ChildrenInputData> children,
-                 final List<GiftsInputData> gifts,
-                 final List<ChangesInputData> changes) {
+                 final ArrayList<ChildrenInputData> children,
+                 final ArrayList<GiftsInputData> gifts,
+                 final ArrayList<ChangesInputData> changes) {
         this.numberOfYearsData = numberOfYears;
         this.santaBudgetData = santaBudget;
         this.childrenData = children;
@@ -50,15 +51,15 @@ public final class Input {
         return santaBudgetData;
     }
 
-    public List<ChildrenInputData> getChildren() {
+    public ArrayList<ChildrenInputData> getChildren() {
         return childrenData;
     }
 
-    public List<GiftsInputData> getGifts() {
+    public ArrayList<GiftsInputData> getGifts() {
         return giftsData;
     }
 
-    public List<ChangesInputData> getChanges() {
+    public ArrayList<ChangesInputData> getChanges() {
         return changesData;
     }
 }

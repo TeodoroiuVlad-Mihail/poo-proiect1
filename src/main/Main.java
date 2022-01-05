@@ -2,6 +2,7 @@ package main;
 
 import checker.Checker;
 import common.Constants;
+import fileio.Writer;
 import lombok.ToString;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -17,6 +18,10 @@ import java.util.Objects;
 //import fileio.ActionInputData;
 import fileio.Input;
 import fileio.InputLoader;
+import reading.Child;
+import reading.Children;
+import reading.Gift;
+import reading.Gifts;
 //import fileio.Writer;
 
 /**
@@ -74,6 +79,9 @@ public final class Main {
         InputLoader inputLoader = new InputLoader(filePath1);
         Input input = inputLoader.readInitialData();
 
+        Writer fileWriter = new Writer(filePath2);
+        JSONArray arrayResult = new JSONArray();
+
         double numberOfYears = input.getNumberOfYears();
         double santaBudget = input.getSantaBudget();
 
@@ -81,14 +89,31 @@ public final class Main {
         System.out.println("Santa Budget: " + santaBudget);
         System.out.println();
 
+        Children children = new Children(input.getChildren());
+        Gifts santaGiftsList = new Gifts(input.getGifts());
+
+        System.out.println("Children:");
+        for(int i = 0; i < children.children.size(); i++){
+            Child child = children.children.get(i);
+            System.out.println(child.toString());
+        }
+
+        System.out.println();
+        System.out.println("Gifts:");
+        for(int i = 0; i < santaGiftsList.gifts.size(); i++){
+            Gift gift = santaGiftsList.gifts.get(i);
+            System.out.println(gift.toString());
+        }
+
+        System.out.println();
+        System.out.println();
+
+
         for(int i = 0; i <=numberOfYears ; i++){
             //commands for prelucration
         }
 
-        //Writer fileWriter = new Writer(filePath2);
-        JSONArray arrayResult = new JSONArray();
 
-        //entry point to implementation
 
 
 

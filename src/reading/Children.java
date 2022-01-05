@@ -10,7 +10,7 @@ import java.util.List;
  */
 
 public class Children {
-    ArrayList<Child> children = new ArrayList<>();
+    public ArrayList<Child> children = new ArrayList<>();
     public Children(final List<ChildrenInputData> list) {
         for (ChildrenInputData i : list) {
             Child child = new Child(i.getId(), i.getLastName(), i.getFirstName(), i.getAge(),
@@ -18,4 +18,5 @@ public class Children {
             children.add(child);
         }
     }
+
 }

@@ -2,35 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_13_0_rc1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_core_2_13_0_rc1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_databind_2_13_0_rc1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lombok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lombok_1_18_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_json_simple_0_3_incubating.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/ChangesInputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/ChildrenInputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/GiftsInputData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/InputLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reading/Child.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reading/Children.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reading/Gift.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reading/Gifts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/checkstyle_8_36_2_all.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/checkstyle_8_36_2_all1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/libs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/fileio/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/poo proiect1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/proiect1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/proiect1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/Input.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Child.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Child.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Children.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Children.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Gift.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Gift.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Gifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Gifts.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/InputLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/InputLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Child.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Children.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Children.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Gift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Gift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Gifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Gifts.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +62,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/jackson-annotations-2.13.0-rc1.jar" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -110,7 +100,7 @@
       <workItem from="1641299268407" duration="1959000" />
       <workItem from="1641323713485" duration="594000" />
       <workItem from="1641325264675" duration="12663000" />
-      <workItem from="1641410322942" duration="1550000" />
+      <workItem from="1641410322942" duration="3911000" />
     </task>
     <servers />
   </component>

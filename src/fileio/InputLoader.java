@@ -40,9 +40,9 @@ public final class InputLoader {
         JSONParser jsonParser = new JSONParser();
         double numberOfYears = 0;
         double santaBudget = 0;
-        List<ChildrenInputData> children = new ArrayList<>();
-        List<GiftsInputData> gifts = new ArrayList<>();
-        List<ChangesInputData> changes = new ArrayList<>();
+        ArrayList<ChildrenInputData> children = new ArrayList<>();
+        ArrayList<GiftsInputData> gifts = new ArrayList<>();
+        ArrayList<ChangesInputData> changes = new ArrayList<>();
 
         try {
             // Parsing the contents of the JSON file
@@ -56,6 +56,8 @@ public final class InputLoader {
             santaBudget = (int) (long) jsonObject.get(Constants.SANTABUDGET);
 
             JSONArray jsonChildren = (JSONArray) initialData.get(Constants.CHILDREN);
+
+            JSONArray jsonGifts = (JSONArray) initialData.get(Constants.SANTAGIFTSLIST);
 
             if (jsonChildren != null) {
                 for (Object jsonChild: jsonChildren) {
@@ -77,6 +79,25 @@ public final class InputLoader {
             if (jsonChildren == null) {
                 children = null;
             }
+
+            //now to read the gifts
+
+            if (jsonGifts != null) {
+                for (Object jsonGift: jsonGifts) {
+                    gifts.add(new GiftsInputData(
+                            (String) ((JSONObject) jsonGift).get(Constants.PRODUCTNAME),
+                            (double) ((long) ((JSONObject) jsonGift).get(Constants.PRICE)),
+                            (String) ((JSONObject) jsonGift).get(Constants.CATEGORY)
+                    ));
+                }
+            } else {
+                System.out.println("NU EXISTA CADOURI");
+            }
+
+            if (jsonGifts == null) {
+                gifts = null;
+            }
+
 
         } catch (ParseException | IOException e) {
             e.printStackTrace();
