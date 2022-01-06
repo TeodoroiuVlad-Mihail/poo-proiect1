@@ -16,8 +16,6 @@ public final class Constants {
     public static final String TESTS_PATH = "tests/";
     public static final String RESULT_PATH = "output";
 
-
-
     public static final String INITIALDATA = "initialData";
     public static final String NUMBEROFYEARS = "numberOfYears";
     public static final String SANTABUDGET = "santaBudget";

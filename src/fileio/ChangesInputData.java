@@ -2,7 +2,7 @@ package fileio;
 
 public class ChangesInputData {
 
-    private int newSantaBudget;
+    private double newSantaBudget;
     private int newGifts;
     private int newChildren;
     private int childrenUpdates;
@@ -14,7 +14,7 @@ public class ChangesInputData {
         this.childrenUpdates = childrenUpdates;
     }
 
-    public int getNewSantaBudget() {
+    public double getNewSantaBudget() {
         return newSantaBudget;
     }
     public void setNewSantaBudget(int newSantaBudget) {

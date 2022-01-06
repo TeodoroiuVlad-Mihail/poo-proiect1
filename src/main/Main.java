@@ -2,6 +2,7 @@ package main;
 
 import checker.Checker;
 import common.Constants;
+import fileio.ChangesInputData;
 import fileio.Writer;
 import lombok.ToString;
 import org.json.simple.JSONArray;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Objects;
 
 //added by me
@@ -22,6 +24,7 @@ import reading.Child;
 import reading.Children;
 import reading.Gift;
 import reading.Gifts;
+import writing.Write;
 //import fileio.Writer;
 
 /**
@@ -80,17 +83,20 @@ public final class Main {
         Input input = inputLoader.readInitialData();
 
         Writer fileWriter = new Writer(filePath2);
-        JSONArray arrayResult = new JSONArray();
+        JSONObject objectResult = new JSONObject();
 
         double numberOfYears = input.getNumberOfYears();
         double santaBudget = input.getSantaBudget();
 
+        Children children = new Children(input.getChildren());
+        Gifts santaGiftsList = new Gifts(input.getGifts());
+        //Changes changesList =  new Changes(input.getChanges());
+
+        Write write = new Write(children);
+
         System.out.println("Number of years: " + numberOfYears);
         System.out.println("Santa Budget: " + santaBudget);
         System.out.println();
-
-        Children children = new Children(input.getChildren());
-        Gifts santaGiftsList = new Gifts(input.getGifts());
 
         System.out.println("Children:");
         for(int i = 0; i < children.children.size(); i++){
@@ -99,26 +105,30 @@ public final class Main {
         }
 
         System.out.println();
+
+        System.out.println();
         System.out.println("Gifts:");
         for(int i = 0; i < santaGiftsList.gifts.size(); i++){
             Gift gift = santaGiftsList.gifts.get(i);
             System.out.println(gift.toString());
         }
-
         System.out.println();
         System.out.println();
 
+        JSONArray arrayResult = new JSONArray();
 
-        for(int i = 0; i <=numberOfYears ; i++){
-            //commands for prelucration
+        //Calculate stuff and print for the year 0
+        JSONObject object = null;
+        object = write.returnChildren();
+        arrayResult.add(arrayResult.size(), object);
+
+        for(int i = 1; i <=numberOfYears ; i++){
+            object = write.returnChildren();
+            arrayResult.add(arrayResult.size(), object);
         }
 
+        objectResult.put("annualChildren", arrayResult);
 
-
-
-
-        //arrayResult.add(arrayResult.size(), object);
-
-        //fileWriter.closeJSON(arrayResult);
+        fileWriter.closeJSON(objectResult);
     }
 }
