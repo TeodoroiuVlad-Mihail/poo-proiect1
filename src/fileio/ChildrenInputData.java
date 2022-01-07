@@ -36,6 +36,7 @@ public class ChildrenInputData {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -43,6 +44,7 @@ public class ChildrenInputData {
     public String getLastName() {
         return lastName;
     }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -50,6 +52,7 @@ public class ChildrenInputData {
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -57,6 +60,7 @@ public class ChildrenInputData {
     public String getCity() {
         return city;
     }
+
     public void setCity(String city) {
         this.city = city;
     }
@@ -64,6 +68,7 @@ public class ChildrenInputData {
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -71,6 +76,7 @@ public class ChildrenInputData {
     public List<String> getGiftsPreferences() {
         return giftsPreferences;
     }
+
     public void setGiftsPreferences(List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
@@ -78,6 +84,7 @@ public class ChildrenInputData {
     public double getAverageScore() {
         return averageScore;
     }
+
     public void setAverageScore(double averageScore) {
         this.averageScore = averageScore;
     }
@@ -85,6 +92,7 @@ public class ChildrenInputData {
     public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
     }
+
     public void setNiceScoreHistory(List<Double> niceScoreHistory) {
         this.niceScoreHistory = niceScoreHistory;
     }
@@ -92,6 +100,7 @@ public class ChildrenInputData {
     public double getAssignedBudget() {
         return assignedBudget;
     }
+
     public void setAssignedBudget(double assignedBudget) {
         this.assignedBudget = assignedBudget;
     }
@@ -99,6 +108,7 @@ public class ChildrenInputData {
     public List<Gift> getReceivedGifts() {
         return receivedGifts;
     }
+
     public void setReceivedGifts(List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }

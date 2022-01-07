@@ -1,6 +1,8 @@
 package fileio;
 
 import reading.Child;
+import reading.ChildUpdates;
+import reading.ChildrenUpdates;
 import reading.Gift;
 
 import java.util.ArrayList;
@@ -9,10 +11,10 @@ public class ChangesInputData {
 
     private double newSantaBudget;
     private ArrayList<Gift> newGifts;
-    private ArrayList<Child> newChildren;
-    private ArrayList<Child> childrenUpdates;
+    private ArrayList<ChildrenInputData> newChildren;
+    private ArrayList<ChildrenUpdatesInputData> childrenUpdates;
 
-    public ChangesInputData(double newSantaBudget, ArrayList<Gift> newGifts, ArrayList<Child>newChildren, ArrayList<Child> childrenUpdates) {
+    public ChangesInputData(double newSantaBudget, ArrayList<Gift> newGifts, ArrayList<ChildrenInputData> newChildren, ArrayList<ChildrenUpdatesInputData> childrenUpdates) {
         this.newSantaBudget = newSantaBudget;
         this.newGifts = newGifts;
         this.newChildren = newChildren;
@@ -22,6 +24,7 @@ public class ChangesInputData {
     public double getNewSantaBudget() {
         return newSantaBudget;
     }
+
     public void setNewSantaBudget(int newSantaBudget) {
         this.newSantaBudget = newSantaBudget;
     }
@@ -29,21 +32,24 @@ public class ChangesInputData {
     public ArrayList<Gift> getNewGifts() {
         return newGifts;
     }
+
     public void setNewGifts(ArrayList<Gift> newGifts) {
         this.newGifts = newGifts;
     }
 
-    public ArrayList<Child> getNewChildren() {
+    public ArrayList<ChildrenInputData> getNewChildren() {
         return newChildren;
     }
-    public void setNewChildren(ArrayList<Child> newChildren) {
+
+    public void setNewChildren(ArrayList<ChildrenInputData> newChildren) {
         this.newChildren = newChildren;
     }
 
-    public ArrayList<Child> getChildrenUpdates() {
+    public ArrayList<ChildrenUpdatesInputData> getChildrenUpdates() {
         return childrenUpdates;
     }
-    public void setChildrenUpdates(ArrayList<Child> childrenUpdates) {
+
+    public void setChildrenUpdates(ArrayList<ChildrenUpdatesInputData> childrenUpdates) {
         this.childrenUpdates = childrenUpdates;
     }
 }

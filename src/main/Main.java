@@ -2,7 +2,7 @@ package main;
 
 import checker.Checker;
 import common.Constants;
-import fileio.Writer;
+import fileio.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -11,12 +11,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Objects;
 
 //added by me
 //import fileio.ActionInputData;
-import fileio.Input;
-import fileio.InputLoader;
+import org.json.simple.parser.ParseException;
 import reading.*;
 import updating.UpdateChildren;
 import writing.Write;
@@ -30,12 +30,13 @@ public final class Main {
     private Main() {
         ///constructor for checkstyle
     }
+
     /**
      * This method is used to call the checker which calculates the score
-     * @param args
-     *          the arguments used to call the main method
+     *
+     * @param args the arguments used to call the main method
      */
-    public static void main(final String[] args) throws IOException {
+    public static void main(final String[] args) throws IOException, ParseException {
 
         File directory = new File(Constants.TESTS_PATH);
         Path path = Paths.get(Constants.RESULT_PATH);
@@ -64,7 +65,7 @@ public final class Main {
             }
         }
 
-        
+
         Checker.calculateScore();
     }
 
@@ -74,9 +75,9 @@ public final class Main {
      * @throws IOException in case of exceptions to reading / writing
      */
     public static void action(final String filePath1,
-                              final String filePath2) throws IOException {
+                              final String filePath2) throws IOException, ParseException {
         InputLoader inputLoader = new InputLoader(filePath1);
-        Input input= inputLoader.readInput();
+        Input input = inputLoader.readInput();
 
         Writer fileWriter = new Writer(filePath2);
         JSONObject objectResult = new JSONObject();
@@ -86,7 +87,7 @@ public final class Main {
 
         Children children = new Children(input.getChildren());
         Gifts santaGiftsList = new Gifts(input.getGifts());
-        Changes changesList =  new Changes(input.getChanges());
+        Changes changesList = new Changes(input.getChanges());
 
         Write write = new Write(children);
         JSONArray arrayResult = new JSONArray();
@@ -97,16 +98,26 @@ public final class Main {
 
         JSONObject object = null;
         updateChildren.RemoveYoungAdults(children);
+        updateChildren.CalculateAverageScore(children);
         updateChildren.CalculateKidBudget(children, santaBudget);
         updateChildren.GiveChildrenGifts(children, santaGiftsList);
         object = write.returnChildren();
         arrayResult.add(arrayResult.size(), object);
 
-        for(int i = 1; i <=numberOfYears ; i++){
-            santaBudget = changesList.changes.get(i-1).getNewSantaBudget();
+        for (int i = 1; i <= numberOfYears; i++) {
+            santaBudget = changesList.changes.get(i - 1).getNewSantaBudget();
 
             updateChildren.GrowChildren(children);
+
+            ArrayList<ChildrenInputData> newChildren = changesList.changes.get(i - 1).getNewChildren();
+            updateChildren.AddChildren(children, newChildren);
+
             updateChildren.RemoveYoungAdults(children);
+
+            ArrayList<ChildrenUpdatesInputData> childrenUpdates = changesList.changes.get(i - 1).getChildrenUpdates();
+            updateChildren.UpdateChildren(children, childrenUpdates);
+
+            updateChildren.CalculateAverageScore(children);
             updateChildren.CalculateKidBudget(children, santaBudget);
             updateChildren.GiveChildrenGifts(children, santaGiftsList);
             object = write.returnChildren();

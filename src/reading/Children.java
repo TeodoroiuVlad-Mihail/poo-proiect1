@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Children {
     public ArrayList<Child> children = new ArrayList<>();
+
     public Children(final List<ChildrenInputData> list) {
         for (ChildrenInputData i : list) {
             Child child = new Child(i.getId(), i.getLastName(), i.getFirstName(), i.getCity(),

@@ -14,6 +14,7 @@ public class Gift {
     public String getProductName() {
         return productName;
     }
+
     public void setProductName(String productName) {
         this.productName = productName;
     }
@@ -21,6 +22,7 @@ public class Gift {
     public double getPrice() {
         return price;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
@@ -28,6 +30,7 @@ public class Gift {
     public String getCategory() {
         return category;
     }
+
     public void setCategory(String category) {
         this.category = category;
     }

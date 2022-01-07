@@ -18,6 +18,7 @@ public final class Input {
     private final ArrayList<GiftsInputData> giftsData;
 
     private final ArrayList<ChangesInputData> changesData;
+
     /**
      * List of movies
      */

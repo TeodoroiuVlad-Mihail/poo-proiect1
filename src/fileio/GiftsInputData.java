@@ -16,6 +16,7 @@ public class GiftsInputData {
     public String getProductName() {
         return productName;
     }
+
     public void setProductName(String productName) {
         this.productName = productName;
     }
@@ -23,6 +24,7 @@ public class GiftsInputData {
     public double getPrice() {
         return price;
     }
+
     public void setPrice(double price) {
         this.price = price;
     }
@@ -30,6 +32,7 @@ public class GiftsInputData {
     public String getCategory() {
         return category;
     }
+
     public void setCategory(String category) {
         this.category = category;
     }

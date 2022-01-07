@@ -33,6 +33,7 @@ public class Child {
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -40,6 +41,7 @@ public class Child {
     public String getLastName() {
         return lastName;
     }
+
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -47,6 +49,7 @@ public class Child {
     public String getFirstName() {
         return firstName;
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -54,6 +57,7 @@ public class Child {
     public String getCity() {
         return city;
     }
+
     public void setCity(String city) {
         this.city = city;
     }
@@ -61,6 +65,7 @@ public class Child {
     public int getAge() {
         return age;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
@@ -68,6 +73,7 @@ public class Child {
     public List<String> getGiftsPreferences() {
         return giftsPreferences;
     }
+
     public void setGiftsPreferences(List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
@@ -75,6 +81,7 @@ public class Child {
     public double getAverageScore() {
         return averageScore;
     }
+
     public void setAverageScore(double averageScore) {
         this.averageScore = averageScore;
     }
@@ -82,6 +89,7 @@ public class Child {
     public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
     }
+
     public void setNiceScoreHistory(List<Double> niceScoreHistory) {
         this.niceScoreHistory = niceScoreHistory;
     }
@@ -89,6 +97,7 @@ public class Child {
     public double getAssignedBudget() {
         return assignedBudget;
     }
+
     public void setAssignedBudget(double assignedBudget) {
         this.assignedBudget = assignedBudget;
     }
@@ -96,6 +105,7 @@ public class Child {
     public List<Gift> getReceivedGifts() {
         return receivedGifts;
     }
+
     public void setReceivedGifts(List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }
@@ -103,7 +113,7 @@ public class Child {
     public String giftsToString(List<String> giftsPreferences) {
         String string = new String();
         string = string.concat("[");
-        for(int i = 0; i < giftsPreferences.size(); i++) {
+        for (int i = 0; i < giftsPreferences.size(); i++) {
             string = string.concat("\"" + giftsPreferences.get(i) + "\"");
             if (i < giftsPreferences.size() - 1)
                 string = string.concat(", ");

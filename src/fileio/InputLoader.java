@@ -6,6 +6,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import reading.Child;
+import reading.ChildUpdates;
+import reading.ChildrenUpdates;
 import reading.Gift;
 import utils.Utils;
 
@@ -34,6 +36,7 @@ public final class InputLoader {
 
     /**
      * The method reads the database
+     *
      * @return an Input object
      */
     public Input readInput() {
@@ -60,7 +63,7 @@ public final class InputLoader {
             JSONArray jsonGifts = (JSONArray) initialData.get(Constants.SANTAGIFTSLIST);
 
             if (jsonChildren != null) {
-                for (Object jsonChild: jsonChildren) {
+                for (Object jsonChild : jsonChildren) {
                     children.add(new ChildrenInputData(
                             (int) ((long) ((JSONObject) jsonChild).get(Constants.ID)),
                             (String) ((JSONObject) jsonChild).get(Constants.LASTNAME),
@@ -83,7 +86,7 @@ public final class InputLoader {
             //now to read the gifts
 
             if (jsonGifts != null) {
-                for (Object jsonGift: jsonGifts) {
+                for (Object jsonGift : jsonGifts) {
                     gifts.add(new GiftsInputData(
                             (String) ((JSONObject) jsonGift).get(Constants.PRODUCTNAME),
                             (double) ((long) ((JSONObject) jsonGift).get(Constants.PRICE)),
@@ -101,12 +104,57 @@ public final class InputLoader {
             //now for the changes
             JSONArray jsonChanges = (JSONArray) jsonObject.get("annualChanges");
             if (jsonChanges != null) {
-                for (Object jsonChange: jsonChanges) {
+                for (Object jsonChange : jsonChanges) {
+
+                    JSONArray jsonNewChildren = ((JSONArray) ((JSONObject) jsonChange).get("newChildren"));
+                    ArrayList<ChildrenInputData> newChildren = new ArrayList<>();
+                    if (jsonNewChildren != null) {
+                        for (Object jsonNewChild : jsonNewChildren) {
+                            newChildren.add(new ChildrenInputData(
+                                    (int) ((long) ((JSONObject) jsonNewChild).get(Constants.ID)),
+                                    (String) ((JSONObject) jsonNewChild).get(Constants.LASTNAME),
+                                    (String) ((JSONObject) jsonNewChild).get(Constants.FIRSTNAME),
+                                    (String) ((JSONObject) jsonNewChild).get(Constants.CITY),
+                                    (int) ((long) ((JSONObject) jsonNewChild).get(Constants.AGE)),
+                                    Utils.convertJSONArray((JSONArray) ((JSONObject) jsonNewChild)
+                                            .get(Constants.GIFTSPREFERENCES)),
+                                    (int) ((long) ((JSONObject) jsonNewChild).get(Constants.NICESCORE))
+                            ));
+                        }
+                    }
+                    if (jsonNewChildren == null) {
+                        newChildren = null;
+                    }
+
+                    //Construct the Children updates
+                    JSONArray jsonChildrenUpdates = ((JSONArray) ((JSONObject) jsonChange).get("childrenUpdates"));
+                    ArrayList<ChildrenUpdatesInputData> childrenUpdates = new ArrayList<>();
+                    if (jsonChildrenUpdates != null) {
+                        for (Object jsonChildrenUpdate : jsonChildrenUpdates) {
+                            double niceScore;
+                            if (((JSONObject) jsonChildrenUpdate).get("niceScore") != null) {
+                                niceScore = (double) ((long) ((JSONObject) jsonChildrenUpdate).get("niceScore"));
+                            } else {
+                                niceScore = -1;
+                            }
+                            childrenUpdates.add(new ChildrenUpdatesInputData(
+                                    (int) ((long) ((JSONObject) jsonChildrenUpdate).get("id")),
+                                    niceScore,
+                                    Utils.convertJSONArray((JSONArray) ((JSONObject) jsonChildrenUpdate)
+                                            .get(Constants.GIFTSPREFERENCES))
+                            ));
+                        }
+                    }
+
+                    if (jsonChildrenUpdates == null) {
+                        childrenUpdates = null;
+                    }
+
                     changes.add(new ChangesInputData(
                             (double) ((long) ((JSONObject) jsonChange).get("newSantaBudget")),
                             (ArrayList<Gift>) ((JSONArray) ((JSONObject) jsonChange).get("newGifts")),
-                            (ArrayList<Child>) ((JSONArray) ((JSONObject) jsonChange).get("newChildren")),
-                            (ArrayList<Child>) ((JSONArray) ((JSONObject) jsonChange).get("childrenUpdates"))
+                            newChildren,
+                            childrenUpdates
                     ));
                 }
             } else {

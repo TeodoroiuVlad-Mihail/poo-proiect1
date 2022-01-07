@@ -13,7 +13,6 @@ import java.util.LinkedHashMap;
 
 /**
  * The class contains static methods that helps with parsing.
- *
  */
 public final class Utils {
     /**
@@ -24,6 +23,7 @@ public final class Utils {
 
     /**
      * Transforms a string into an enum
+     *
      * @param category of gift
      * @return an Genre Enum
      */
@@ -41,6 +41,7 @@ public final class Utils {
 
     /**
      * Transforms a string into an enum
+     *
      * @param city for actors
      * @return an ActorsAwards Enum
      */
@@ -62,6 +63,7 @@ public final class Utils {
 
     /**
      * Transforms an array of JSON's into an array of strings
+     *
      * @param array of JSONs
      * @return a list of strings
      */
