@@ -1,7 +1,6 @@
 package fileio;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The class contains information about input
@@ -29,7 +28,6 @@ public final class Input {
         this.childrenData = null;
         this.giftsData = null;
         this.changesData = null;
-
     }
 
     public Input(final double numberOfYears, final double santaBudget,

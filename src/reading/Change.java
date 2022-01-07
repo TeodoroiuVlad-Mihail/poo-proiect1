@@ -5,14 +5,14 @@ import reading.Gift;
 
 import java.util.ArrayList;
 
-public class ChangesInputData {
+public class Change {
 
     private double newSantaBudget;
     private ArrayList<Gift> newGifts;
     private ArrayList<Child> newChildren;
     private ArrayList<Child> childrenUpdates;
 
-    public ChangesInputData(double newSantaBudget, ArrayList<Gift> newGifts, ArrayList<Child>newChildren, ArrayList<Child> childrenUpdates) {
+    public Change(double newSantaBudget, ArrayList<Gift> newGifts, ArrayList<Child> newChildren, ArrayList<Child> childrenUpdates) {
         this.newSantaBudget = newSantaBudget;
         this.newGifts = newGifts;
         this.newChildren = newChildren;

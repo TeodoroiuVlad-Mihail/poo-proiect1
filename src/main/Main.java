@@ -2,9 +2,7 @@ package main;
 
 import checker.Checker;
 import common.Constants;
-import fileio.ChangesInputData;
 import fileio.Writer;
-import lombok.ToString;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -13,17 +11,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Objects;
 
 //added by me
 //import fileio.ActionInputData;
 import fileio.Input;
 import fileio.InputLoader;
-import reading.Child;
-import reading.Children;
-import reading.Gift;
-import reading.Gifts;
+import reading.*;
+import updating.UpdateChildren;
 import writing.Write;
 //import fileio.Writer;
 
@@ -59,11 +54,12 @@ public final class Main {
         }
 
         for (File file : Objects.requireNonNull(directory.listFiles())) {
-            String filepath = Constants.OUTPUT_PATH + file.getName();
+            String filepath = Constants.OUTPUT_PATH
+                    + file.getName().replaceAll("[^0-9]+", "")
+                    + Constants.FILE_EXTENSION;
             File out = new File(filepath);
             boolean isCreated = out.createNewFile();
             if (isCreated) {
-                System.out.println(filepath + ":");
                 action(file.getAbsolutePath(), filepath);
             }
         }
@@ -80,7 +76,7 @@ public final class Main {
     public static void action(final String filePath1,
                               final String filePath2) throws IOException {
         InputLoader inputLoader = new InputLoader(filePath1);
-        Input input = inputLoader.readInitialData();
+        Input input= inputLoader.readInput();
 
         Writer fileWriter = new Writer(filePath2);
         JSONObject objectResult = new JSONObject();
@@ -90,39 +86,29 @@ public final class Main {
 
         Children children = new Children(input.getChildren());
         Gifts santaGiftsList = new Gifts(input.getGifts());
-        //Changes changesList =  new Changes(input.getChanges());
+        Changes changesList =  new Changes(input.getChanges());
 
         Write write = new Write(children);
-
-        System.out.println("Number of years: " + numberOfYears);
-        System.out.println("Santa Budget: " + santaBudget);
-        System.out.println();
-
-        System.out.println("Children:");
-        for(int i = 0; i < children.children.size(); i++){
-            Child child = children.children.get(i);
-            System.out.println(child.toString());
-        }
-
-        System.out.println();
-
-        System.out.println();
-        System.out.println("Gifts:");
-        for(int i = 0; i < santaGiftsList.gifts.size(); i++){
-            Gift gift = santaGiftsList.gifts.get(i);
-            System.out.println(gift.toString());
-        }
-        System.out.println();
-        System.out.println();
-
         JSONArray arrayResult = new JSONArray();
 
         //Calculate stuff and print for the year 0
+        UpdateChildren updateChildren = new UpdateChildren(children, santaGiftsList);
+
+
         JSONObject object = null;
+        updateChildren.RemoveYoungAdults(children);
+        updateChildren.CalculateKidBudget(children, santaBudget);
+        updateChildren.GiveChildrenGifts(children, santaGiftsList);
         object = write.returnChildren();
         arrayResult.add(arrayResult.size(), object);
 
         for(int i = 1; i <=numberOfYears ; i++){
+            santaBudget = changesList.changes.get(i-1).getNewSantaBudget();
+
+            updateChildren.GrowChildren(children);
+            updateChildren.RemoveYoungAdults(children);
+            updateChildren.CalculateKidBudget(children, santaBudget);
+            updateChildren.GiveChildrenGifts(children, santaGiftsList);
             object = write.returnChildren();
             arrayResult.add(arrayResult.size(), object);
         }

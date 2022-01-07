@@ -34,10 +34,10 @@ public class Gift {
 
     @Override
     public String toString() {
-        return "Gift{" +
-                "productName='" + productName + '\'' +
-                ", price=" + price +
-                ", category='" + category + '\'' +
+        return "{" +
+                "\"productName\":\"" + productName + '\"' +
+                ", \"price\":" + price +
+                ", \"category\":\"" + category + '\"' +
                 '}';
     }
 }

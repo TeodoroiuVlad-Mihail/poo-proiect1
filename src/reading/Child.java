@@ -100,19 +100,32 @@ public class Child {
         this.receivedGifts = receivedGifts;
     }
 
+    public String giftsToString(List<String> giftsPreferences) {
+        String string = new String();
+        string = string.concat("[");
+        for(int i = 0; i < giftsPreferences.size(); i++) {
+            string = string.concat("\"" + giftsPreferences.get(i) + "\"");
+            if (i < giftsPreferences.size() - 1)
+                string = string.concat(", ");
+        }
+        string = string.concat(" ]");
+
+        return string;
+    }
+
     @Override
     public String toString() {
-        return "Child{" +
-                "id=" + id +
-                ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", city='" + city + '\'' +
-                ", age=" + age +
-                ", giftsPreferences=" + giftsPreferences +
-                ", averageScore=" + averageScore +
-                ", niceScoreHistory=" + niceScoreHistory +
-                ", assignedBudget=" + assignedBudget +
-                ", receivedGifts=" + receivedGifts +
+        return "{" +
+                "\"id\":" + id +
+                ", \"lastName\": \"" + lastName + '\"' +
+                ", \"firstName\": \"" + firstName + '\"' +
+                ", \"city\": \"" + city + '\"' +
+                ", \"age\":" + age +
+                ", \"giftsPreferences\":" + giftsToString(giftsPreferences) +
+                ", \"averageScore\":" + averageScore +
+                ", \"niceScoreHistory\":" + niceScoreHistory +
+                ", \"assignedBudget\":" + assignedBudget +
+                ", \"receivedGifts\":" + receivedGifts +
                 '}';
     }
 }

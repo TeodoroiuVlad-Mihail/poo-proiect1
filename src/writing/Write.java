@@ -15,7 +15,6 @@ public class Write {
 
     public Write(final Children c){
         children = c;
-
     }
 
     public JSONObject returnChildren() {
@@ -24,11 +23,15 @@ public class Write {
 
         for (int i = 0; i < children.children.size(); i++) {
             Child child = children.children.get(i);
-            childArray.add(child.toString());
+            Child copyChild = new Child(child.getId(), child.getLastName(), child.getFirstName(), child.getCity(),
+                    child.getAge(), child.getGiftsPreferences(), child.getAverageScore(),
+                    child.getNiceScoreHistory(), child.getAssignedBudget(), child.getReceivedGifts());
+            childArray.add(copyChild);
         }
 
+
         JSONObject annualChildren= new JSONObject();
-        annualChildren.put("Children", childArray);
+        annualChildren.put("children", childArray);
         return annualChildren;
     }
 }

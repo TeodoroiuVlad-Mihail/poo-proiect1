@@ -3,15 +3,15 @@ package fileio;
 import common.Constants;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import reading.Child;
+import reading.Gift;
 import utils.Utils;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * The class reads and parses the data from the tests
@@ -36,7 +36,7 @@ public final class InputLoader {
      * The method reads the database
      * @return an Input object
      */
-    public Input readInitialData() {
+    public Input readInput() {
         JSONParser jsonParser = new JSONParser();
         double numberOfYears = 0;
         double santaBudget = 0;
@@ -98,6 +98,24 @@ public final class InputLoader {
                 gifts = null;
             }
 
+            //now for the changes
+            JSONArray jsonChanges = (JSONArray) jsonObject.get("annualChanges");
+            if (jsonChanges != null) {
+                for (Object jsonChange: jsonChanges) {
+                    changes.add(new ChangesInputData(
+                            (double) ((long) ((JSONObject) jsonChange).get("newSantaBudget")),
+                            (ArrayList<Gift>) ((JSONArray) ((JSONObject) jsonChange).get("newGifts")),
+                            (ArrayList<Child>) ((JSONArray) ((JSONObject) jsonChange).get("newChildren")),
+                            (ArrayList<Child>) ((JSONArray) ((JSONObject) jsonChange).get("childrenUpdates"))
+                    ));
+                }
+            } else {
+                System.out.println("NU EXISTA SCHIMBARI");
+            }
+            if (jsonChanges == null) {
+                changes = null;
+            }
+
 
         } catch (ParseException | IOException e) {
             e.printStackTrace();
@@ -105,6 +123,5 @@ public final class InputLoader {
 
         return new Input(numberOfYears, santaBudget, children, gifts, changes);
     }
-
 
 }
