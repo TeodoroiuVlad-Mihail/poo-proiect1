@@ -97,17 +97,22 @@ public final class Main {
         //Calculate stuff and print for the year 0
         AnnualUpdates annualUpdates = new AnnualUpdates(children, santaGiftsList);
 
+        Client client = new Client(children, santaBudget);
+
 
         JSONObject object = null;
         annualUpdates.removeYoungAdults(children);
         annualUpdates.calculateAverageScore(children);
-        annualUpdates.calculateKidBudget(children, santaBudget);
+        //annualUpdates.calculateKidBudget(children, santaBudget);\
+        client.executeAction("calculateKidBudget");
         annualUpdates.giveChildrenGifts(children, santaGiftsList);
         object = write.returnChildren();
         arrayResult.add(arrayResult.size(), object);
 
         for (int i = 1; i <= numberOfYears; i++) {
             santaBudget = changesList.getChanges().get(i - 1).getNewSantaBudget();
+
+            client = new Client(children, santaBudget);
 
             annualUpdates.growChildren(children);
 
@@ -122,7 +127,8 @@ public final class Main {
             annualUpdates.updateChildren(children, childrenUpdates);
 
             annualUpdates.calculateAverageScore(children);
-            annualUpdates.calculateKidBudget(children, santaBudget);
+            //annualUpdates.calculateKidBudget(children, santaBudget);
+            client.executeAction("calculateKidBudget");
             annualUpdates.giveChildrenGifts(children, santaGiftsList);
             object = write.returnChildren();
             arrayResult.add(arrayResult.size(), object);
