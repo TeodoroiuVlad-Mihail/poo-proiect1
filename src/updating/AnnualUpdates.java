@@ -22,48 +22,6 @@ public class AnnualUpdates {
         gifts = g;
     }
 
-    /**
-     * gives gifts to the children
-     */
-    public Children giveChildrenGifts(final Children children, final Gifts gifts) {
-
-        for (int i = 0; i < children.getChildren().size(); i++) {
-
-            double remainingBudget = children.getChildren().get(i).getAssignedBudget();
-            List<Gift> giftsList = new ArrayList<>();
-            List<String> giftsPreferences = children.getChildren().get(i).getGiftsPreferences();
-            for (int j = 0; j < giftsPreferences.size(); j++) {
-                String giftPreference = giftsPreferences.get(j);
-                double mostExpensive = Constants.BIGFOFFNUMBER;
-                Gift cheapestGift = null; //placeholder, needs to be initialized
-
-                //search for the cheapest gift
-                for (int k = 0; k < gifts.getGifts().size(); k++) {
-                    double giftPrice = gifts.getGifts().get(k).getPrice();
-                    String giftCategory = gifts.getGifts().get(k).getCategory();
-                    if (remainingBudget >= giftPrice && giftPreference.compareTo(giftCategory) == 0
-                            && giftPrice < mostExpensive) {
-                        mostExpensive = giftPrice;
-                        cheapestGift = gifts.getGifts().get(k);
-                    }
-
-                }
-                if (cheapestGift != null) {
-                    giftsList.add(cheapestGift);
-                    remainingBudget = remainingBudget - cheapestGift.getPrice();
-                }
-
-            }
-
-            children.getChildren().get(i).setReceivedGifts(giftsList);
-        }
-
-        return children;
-    }
-
-    /**
-     * increments the children's age
-     */
     public Children growChildren(final Children children) {
         for (int i = 0; i < children.getChildren().size(); i++) {
             int newAge = children.getChildren().get(i).getAge() + 1;
@@ -73,20 +31,7 @@ public class AnnualUpdates {
         return children;
     }
 
-    /**
-     * removes kids over 18 from the list
-     */
-    public Children removeYoungAdults(final Children children) {
 
-        for (int i = 0; i < children.getChildren().size(); i++) {
-            if (children.getChildren().get(i).getAge() > Constants.TEENLIMIT) {
-                children.getChildren().remove(i);
-                children.getChildren().trimToSize();
-                i = i - 1;
-            }
-        }
-        return children;
-    }
 
     /**
      * updates children

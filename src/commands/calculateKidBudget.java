@@ -8,7 +8,6 @@ public class calculateKidBudget implements AnnualUpdateCommand{
     private Children children;
     private double santaBudget;
 
-
     /**
      * calculates the budget each kid gets
      */

@@ -4,9 +4,10 @@ package commands;
  * Supported commands
  */
 public enum CommandType {
-    CALCULATE_KID_BUDGET("calculateKidBudget");
-    //CONNECT("connect"),
-    //CHANGE_TEXT("change text");
+    CALCULATE_KID_BUDGET("calculateKidBudget"),
+    GIVE_CHILDREN_GIFTS("giveChildrenGifts"),
+    REMOVE_YOUNG_ADULTS("removeYoungAdults"),
+    GROW_CHILDREN("growChildren");
 
     public final String text;
 

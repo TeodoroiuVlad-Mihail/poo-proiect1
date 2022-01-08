@@ -12,6 +12,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 import reading.Changes;
 import reading.Children;
+import reading.ChildrenUpdates;
 import reading.Gifts;
 import updating.AnnualUpdates;
 import writing.Write;
@@ -97,39 +98,46 @@ public final class Main {
         //Calculate stuff and print for the year 0
         AnnualUpdates annualUpdates = new AnnualUpdates(children, santaGiftsList);
 
-        Client client = new Client(children, santaBudget);
+        Client client = new Client(children, santaBudget, santaGiftsList);
 
 
         JSONObject object = null;
-        annualUpdates.removeYoungAdults(children);
+        //annualUpdates.removeYoungAdults(children);
+        client.executeAction("removeYoungAdults");
         annualUpdates.calculateAverageScore(children);
         //annualUpdates.calculateKidBudget(children, santaBudget);\
         client.executeAction("calculateKidBudget");
-        annualUpdates.giveChildrenGifts(children, santaGiftsList);
+        //annualUpdates.giveChildrenGifts(children, santaGiftsList);
+        client.executeAction("giveChildrenGifts");
         object = write.returnChildren();
         arrayResult.add(arrayResult.size(), object);
 
         for (int i = 1; i <= numberOfYears; i++) {
             santaBudget = changesList.getChanges().get(i - 1).getNewSantaBudget();
 
-            client = new Client(children, santaBudget);
-
-            annualUpdates.growChildren(children);
-
             ArrayList<ChildrenInputData> newChildren =
                     changesList.getChanges().get(i - 1).getNewChildren();
-            annualUpdates.addChildren(children, newChildren);
-
-            annualUpdates.removeYoungAdults(children);
 
             ArrayList<ChildrenUpdatesInputData> childrenUpdates =
                     changesList.getChanges().get(i - 1).getChildrenUpdates();
+
+            client = new Client(children, santaBudget, santaGiftsList, newChildren, childrenUpdates);
+
+            //annualUpdates.growChildren(children);
+            client.executeAction("growChildren");
+
+            annualUpdates.addChildren(children, newChildren);
+
+            //annualUpdates.removeYoungAdults(children);
+            client.executeAction("removeYoungAdults");
+
             annualUpdates.updateChildren(children, childrenUpdates);
 
             annualUpdates.calculateAverageScore(children);
             //annualUpdates.calculateKidBudget(children, santaBudget);
             client.executeAction("calculateKidBudget");
-            annualUpdates.giveChildrenGifts(children, santaGiftsList);
+            //annualUpdates.giveChildrenGifts(children, santaGiftsList);
+            client.executeAction("giveChildrenGifts");
             object = write.returnChildren();
             arrayResult.add(arrayResult.size(), object);
         }
