@@ -70,11 +70,13 @@ public final class Main {
         }
 
         for (File file : Objects.requireNonNull(directory.listFiles())) {
-            String filepath = Constants.OUTPUT_PATH
+            String inPath = file.getAbsolutePath();
+            String outPath = Constants.OUTPUT_PATH
                     + file.getName().replaceAll("[^0-9]+", "")
                     + Constants.FILE_EXTENSION;
-            action(file.getAbsolutePath(), filepath);
+            action(inPath, outPath);
         }
+
 
 
         Checker.calculateScore();
