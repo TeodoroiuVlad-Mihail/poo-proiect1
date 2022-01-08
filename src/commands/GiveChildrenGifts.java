@@ -1,7 +1,6 @@
 package commands;
 
 import common.Constants;
-import reading.Child;
 import reading.Children;
 import reading.Gift;
 import reading.Gifts;
@@ -13,19 +12,19 @@ import java.util.List;
  * gives gifts to the children
  */
 
-public class giveChildrenGifts implements AnnualUpdateCommand{
+public class GiveChildrenGifts implements AnnualUpdateCommand {
     private Children children;
     private Gifts gifts;
 
-    /**
-     * calculates the budget each kid gets
-     */
-    public giveChildrenGifts(final Children children, final Gifts gifts) {
+    public GiveChildrenGifts(final Children children, final Gifts gifts) {
         this.children = children;
         this.gifts = gifts;
     }
 
-    public void execute(){
+    /**
+     * calculates the budget each kid gets
+     */
+    public void execute() {
 
         for (int i = 0; i < children.getChildren().size(); i++) {
 

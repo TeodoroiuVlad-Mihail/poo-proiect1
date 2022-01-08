@@ -1,20 +1,23 @@
 package main;
 
 import checker.Checker;
+
 import common.Constants;
+
 import fileio.ChildrenInputData;
 import fileio.ChildrenUpdatesInputData;
 import fileio.Input;
 import fileio.InputLoader;
 import fileio.Writer;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
+
 import reading.Changes;
 import reading.Children;
-import reading.ChildrenUpdates;
 import reading.Gifts;
-import updating.AnnualUpdates;
+
 import writing.Write;
 
 import java.io.File;
@@ -78,7 +81,7 @@ public final class Main {
      * @throws IOException in case of exceptions to reading / writing
      */
     public static void action(final String filePath1,
-                              final String filePath2) throws IOException, ParseException {
+                              final String filePath2) throws IOException {
         InputLoader inputLoader = new InputLoader(filePath1);
         Input input = inputLoader.readInput();
 
@@ -94,21 +97,16 @@ public final class Main {
 
         Write write = new Write(children);
         JSONArray arrayResult = new JSONArray();
+        JSONObject object = null;
 
         //Calculate stuff and print for the year 0
-        AnnualUpdates annualUpdates = new AnnualUpdates(children, santaGiftsList);
 
         Client client = new Client(children, santaBudget, santaGiftsList);
 
-
-        JSONObject object = null;
-        //annualUpdates.removeYoungAdults(children);
-        client.executeAction("removeYoungAdults");
-        annualUpdates.calculateAverageScore(children);
-        //annualUpdates.calculateKidBudget(children, santaBudget);\
-        client.executeAction("calculateKidBudget");
-        //annualUpdates.giveChildrenGifts(children, santaGiftsList);
-        client.executeAction("giveChildrenGifts");
+        client.executeAction("RemoveYoungAdults");
+        client.executeAction("CalculateAverageScore");
+        client.executeAction("CalculateChildrenBudget");
+        client.executeAction("GiveChildrenGifts");
         object = write.returnChildren();
         arrayResult.add(arrayResult.size(), object);
 
@@ -121,23 +119,16 @@ public final class Main {
             ArrayList<ChildrenUpdatesInputData> childrenUpdates =
                     changesList.getChanges().get(i - 1).getChildrenUpdates();
 
-            client = new Client(children, santaBudget, santaGiftsList, newChildren, childrenUpdates);
+            client = new Client(children, santaBudget, santaGiftsList,
+                    newChildren, childrenUpdates);
 
-            //annualUpdates.growChildren(children);
-            client.executeAction("growChildren");
-
-            annualUpdates.addChildren(children, newChildren);
-
-            //annualUpdates.removeYoungAdults(children);
-            client.executeAction("removeYoungAdults");
-
-            annualUpdates.updateChildren(children, childrenUpdates);
-
-            annualUpdates.calculateAverageScore(children);
-            //annualUpdates.calculateKidBudget(children, santaBudget);
-            client.executeAction("calculateKidBudget");
-            //annualUpdates.giveChildrenGifts(children, santaGiftsList);
-            client.executeAction("giveChildrenGifts");
+            client.executeAction("GrowChildren");
+            client.executeAction("AddChildren");
+            client.executeAction("RemoveYoungAdults");
+            client.executeAction("UpdateChildren");
+            client.executeAction("CalculateAverageScore");
+            client.executeAction("CalculateChildrenBudget");
+            client.executeAction("GiveChildrenGifts");
             object = write.returnChildren();
             arrayResult.add(arrayResult.size(), object);
         }

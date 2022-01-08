@@ -1,6 +1,15 @@
 package main;
 
-import commands.*;
+import commands.AddChildren;
+import commands.AnnualUpdateCommand;
+import commands.CalculateAverageScore;
+import commands.CalculateChildrenBudget;
+import commands.CommandType;
+import commands.GiveChildrenGifts;
+import commands.GrowChildren;
+import commands.RemoveYoungAdults;
+import commands.UpdateChildren;
+
 import fileio.ChildrenInputData;
 import fileio.ChildrenUpdatesInputData;
 import reading.Children;
@@ -9,8 +18,8 @@ import reading.Gifts;
 import java.util.ArrayList;
 
 /**
- * Receives commands in clear text from the user and transforms them in AnnualUpdateCommand objects. It uses the Invoker to
- * execute the given commands.
+ * Receives commands in clear text from the user and transforms them in AnnualUpdateCommand objects
+ * It uses the Invoker to execute the given commands
  */
 public class Client {
 
@@ -44,8 +53,10 @@ public class Client {
         this.childrenUpdates = childrenUpdates;
     }
 
-
-    public void executeAction(String commandName) {
+    /**
+     * executes the selected command
+     */
+    public void executeAction(final String commandName) {
         AnnualUpdateCommand command;
         try {
             CommandType commandType = CommandType.fromString(commandName);
@@ -58,7 +69,7 @@ public class Client {
             System.out.println("Invalid command: " + commandName);
             System.out.println("Available commands:");
             for (CommandType type : CommandType.values()) {
-                System.out.println("\t- " + type.text);
+                System.out.println("\t- " + type.getText());
             }
             return;
         }
@@ -67,21 +78,32 @@ public class Client {
 
     }
 
-    private AnnualUpdateCommand getCommand(CommandType type) throws IllegalArgumentException {
+    private AnnualUpdateCommand getCommand(final CommandType type)
+            throws IllegalArgumentException {
         switch (type) {
-            case CALCULATE_KID_BUDGET: {
-                return new calculateKidBudget(children, santaBudget);
+            case ADD_CHILDREN: {
+                return new AddChildren(children, newChildren);
+            }
+            case CALCULATE_AVERAGE_SCORE: {
+                return new CalculateAverageScore(children);
+            }
+            case CALCULATE_CHILDREN_BUDGET: {
+                return new CalculateChildrenBudget(children, santaBudget);
             }
             case GIVE_CHILDREN_GIFTS: {
-                return new giveChildrenGifts(children, gifts);
-            }
-            case REMOVE_YOUNG_ADULTS: {
-                return new removeYoungAdults(children);
+                return new GiveChildrenGifts(children, gifts);
             }
             case GROW_CHILDREN: {
-                return new growChildren(children);
+                return new GrowChildren(children);
             }
+            case REMOVE_YOUNG_ADULTS: {
+                return new RemoveYoungAdults(children);
+            }
+            case UPDATE_CHILDREN: {
+                return new UpdateChildren(children, childrenUpdates);
+            }
+            default:
+                return null;
         }
-        return null;
     }
 }

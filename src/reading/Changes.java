@@ -21,7 +21,7 @@ public class Changes {
     }
 
     /**
-     * getter for changes :/
+     * getter for changes
      */
     public ArrayList<Change> getChanges() {
         return changes;

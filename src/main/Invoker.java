@@ -8,7 +8,7 @@ public class Invoker {
      * Executes a given command
      * @param command
      */
-    public void execute(AnnualUpdateCommand command) {
+    public void execute(final AnnualUpdateCommand command) {
         command.execute();
     }
 }

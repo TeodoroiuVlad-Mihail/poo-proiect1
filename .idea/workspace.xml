@@ -2,22 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/commands/giveChildrenGifts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/growChildren.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/commands/removeYoungAdults.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/AddChildren.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/CalculateAverageScore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/commands/UpdateChildren.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/CommandType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/CommandType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/calculateKidBudget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/calculateKidBudget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/calculateKidBudget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/giveChildrenGifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/giveChildrenGifts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/growChildren.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/growChildren.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/removeYoungAdults.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/removeYoungAdults.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Client$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proiect1/updating/AnnualUpdates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/updating/AnnualUpdates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/updating/AnnualUpdates.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/commands/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CommandType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/calculateKidBudget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/calculateKidBudget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/calculateKidBudget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CalculateChildrenBudget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/giveChildrenGifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/GiveChildrenGifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/growChildren.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/GrowChildren.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/removeYoungAdults.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveYoungAdults.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Invoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Invoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/updating/AnnualUpdates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updating/AnnualUpdates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Changes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Changes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/updating/AnnualUpdates.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +111,7 @@
       <workItem from="1641325264675" duration="12663000" />
       <workItem from="1641410322942" duration="7997000" />
       <workItem from="1641486837293" duration="15528000" />
-      <workItem from="1641562933677" duration="29533000" />
+      <workItem from="1641562933677" duration="31766000" />
     </task>
     <servers />
   </component>
