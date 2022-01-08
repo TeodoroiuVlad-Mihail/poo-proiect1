@@ -60,15 +60,20 @@ public final class Main {
             }
         }
 
+        //done here to avoid the "Unexpected character () at position 0." error
+        for (int i = 1; i <= Constants.TESTS_NUMBER; i++) {
+            String filepath = Constants.OUTPUT_PATH
+                    + i
+                    + Constants.FILE_EXTENSION;
+            File out = new File(filepath);
+            out.createNewFile();
+        }
+
         for (File file : Objects.requireNonNull(directory.listFiles())) {
             String filepath = Constants.OUTPUT_PATH
                     + file.getName().replaceAll("[^0-9]+", "")
                     + Constants.FILE_EXTENSION;
-            File out = new File(filepath);
-            boolean isCreated = out.createNewFile();
-            if (isCreated) {
-                action(file.getAbsolutePath(), filepath);
-            }
+            action(file.getAbsolutePath(), filepath);
         }
 
 
@@ -110,6 +115,7 @@ public final class Main {
         object = write.returnChildren();
         arrayResult.add(arrayResult.size(), object);
 
+        //Now Iterate for the rest of the years
         for (int i = 1; i <= numberOfYears; i++) {
             santaBudget = changesList.getChanges().get(i - 1).getNewSantaBudget();
 
