@@ -12,7 +12,6 @@ import fileio.Writer;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.ParseException;
 
 import reading.Changes;
 import reading.Children;
@@ -26,7 +25,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * Class used to run the code
@@ -42,9 +40,8 @@ public final class Main {
      *
      * @param args the arguments used to call the main method
      */
-    public static void main(final String[] args) throws IOException, ParseException {
+    public static void main(final String[] args) throws IOException {
 
-        File directory = new File(Constants.TESTS_PATH);
         Path path = Paths.get(Constants.RESULT_PATH);
         if (!Files.exists(path)) {
             Files.createDirectories(path);
@@ -60,24 +57,19 @@ public final class Main {
             }
         }
 
-        //done here to avoid the "Unexpected character () at position 0." error
+        //This should fix that error as I no longer iterate through the files themselves
         for (int i = 1; i <= Constants.TESTS_NUMBER; i++) {
-            String filepath = Constants.OUTPUT_PATH
+            String inPath = Constants.TESTS_PATH
+                    + "test" + i
+                    + Constants.FILE_EXTENSION;
+            String outPath = Constants.OUTPUT_PATH
                     + i
                     + Constants.FILE_EXTENSION;
-            File out = new File(filepath);
-            out.createNewFile();
+            File out = new File(outPath);
+            if (out.createNewFile()) {
+                action(inPath, outPath);
+            }
         }
-
-        for (File file : Objects.requireNonNull(directory.listFiles())) {
-            String inPath = file.getAbsolutePath();
-            String outPath = Constants.OUTPUT_PATH
-                    + file.getName().replaceAll("[^0-9]+", "")
-                    + Constants.FILE_EXTENSION;
-            action(inPath, outPath);
-        }
-
-
 
         Checker.calculateScore();
     }
