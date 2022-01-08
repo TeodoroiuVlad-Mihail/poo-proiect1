@@ -8,8 +8,10 @@ import org.json.simple.parser.ParseException;
 import reading.Gift;
 import utils.Utils;
 
-import java.io.FileReader;
+import java.io.FileInputStream;
+// import java.io.FileReader; no longer needed because of a fixed error
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -45,9 +47,13 @@ public final class InputLoader {
         ArrayList<ChangesInputData> changes = new ArrayList<>();
 
         try {
+            //I think THIS "gave the Unexpected character () at position 0." error
+            //JSONObject jsonObject = (JSONObject) jsonParser
+                    //.parse(new FileReader(inputPath));
+
             // Parsing the contents of the JSON file
-            JSONObject jsonObject = (JSONObject) jsonParser
-                    .parse(new FileReader(inputPath));
+            JSONObject jsonObject = (JSONObject) jsonParser.
+                    parse(new InputStreamReader(new FileInputStream(inputPath)));
 
             JSONObject initialData = (JSONObject) jsonObject.get(Constants.INITIALDATA);
 
