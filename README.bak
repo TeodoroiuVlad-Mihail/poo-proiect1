@@ -1,0 +1,109 @@
+Proiect 1 Etapa 1 POO
+Teodoroiu Vlad-Mihail
+325CA
+
+INAINTE DE CITIT: AICI ESTE CODUL INAINTE SA IL "RESCRIU" FOLOSING COMMAND PATTERN PENTRU SCHIMBARI
+E AICI DOAR IN CAZ CA UIT SA FAC COMMAND PATTERN CA SA NU IAU 0 PE NOTA
+
+foldere din src:
+
+checker
+dat de skelet
+
+
+common
+dat de scelet, Constants e putin modificat de mine
+
+
+enums
+dat de schelet
+
+
+fileio
+luat din skeletul temei 1 si modificat pentru a putea citi datele din acest proiect
+
+	ChangesInputData
+	clasa generala care contine schimbarile, cum ar fi bugetul anual nou, cadourile noi,
+	copii noi si modificarile pentru copii existenti
+	
+	ChildrenInputData
+	clasa pentru citirea copiilor
+	
+	ChildrenUpdateInputData
+	deoarece cand updatam copii primim doar id, un scor de cumintenie nou si noi preferinte
+	de cadouri, avem o clasa separata
+	
+	GiftsInputData
+	clasa pentru citirea cadourilor
+	
+	Input
+	clasa care leaga impreuna subclasele din citire, numarul de ani, bugetul initial,
+	copiii initiali, cadourile initiale si schimbarile
+	
+	InputLoader
+	o nebunie totala, clasa in care citim fisierul json si il convertim in date,
+	prima data cele initiale, apoi schimbarile
+	
+	Writer
+	clasa pentru scris in text
+	
+	
+main
+contine main-ul
+
+	main
+	este format din doua metode
+		main
+		prin care "calculam" caile de input si output, aproape identic cu cel din tema 1
+		
+		action
+		aici imbinam toate datele citite si pe masure ce parcurgem anii cu toate nebuniile de
+		comenzi scriem in fisierul .json folosind WRITER
+		
+reading
+folder care contine toate clasele de date
+
+	Change
+	contine datele pentru o schimbare de ani
+	
+	Changes
+	contine lista schimbarilor pe ani
+	
+	Child
+	clasa de copil
+	
+	Children
+	clasa de lista de copii
+	
+	ChildrenUpdates
+	clasa care contine lista de schimbare de copii
+	
+	ChildrenUpdates
+	clasa de copil care contine doar schimbarile posibile
+	
+	Gift
+	clasa de cadou 
+	
+	Gifts
+	clasa de lista de cadouri
+	
+	
+updating
+nebunie totala
+aici se afla toate comenzile
+
+
+utils
+date de skelet
+
+
+writing
+contine Write
+	
+	Write
+	transforma o instanta de copil intr-un json object pe care il pune in jsonArray-ul
+	care va fi scris in fisier
+	Da stiu e similar in nume cu Writer, cred ca ar fi mers mai bine numele de ToJson dar
+	pentru ca a fost preluat si modificat din skeletul pentru tema 1(cred) l-am pastrat asa
+	cel putin e intr-un alt folder
+	

@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 /**
  * The class contains information about input
- * <p>
- * DO NOT MODIFY
  */
 public final class Input {
 

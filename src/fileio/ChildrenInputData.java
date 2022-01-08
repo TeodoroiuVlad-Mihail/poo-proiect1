@@ -33,83 +33,143 @@ public class ChildrenInputData {
         this.receivedGifts = new ArrayList<>();
     }
 
+    /**
+     * getter for id
+     */
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    /**
+     * setter for id
+     */
+    public void setId(final int id) {
         this.id = id;
     }
 
+    /**
+     * getter for last name
+     */
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    /**
+     * setter for last name
+     */
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * getter for first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    /**
+     * setter for first name
+     */
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * getter for city
+     */
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    /**
+     * setter for city
+     */
+    public void setCity(final String city) {
         this.city = city;
     }
 
+    /**
+     * getter for age
+     */
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    /**
+     * setter for age
+     */
+    public void setAge(final int age) {
         this.age = age;
     }
 
+    /**
+     * getter for assigned gift preferences
+     */
     public List<String> getGiftsPreferences() {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(List<String> giftsPreferences) {
+    /**
+     * setter for gift preferences
+     */
+    public void setGiftsPreferences(final List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
 
+    /**
+     * getter for average score
+     */
     public double getAverageScore() {
         return averageScore;
     }
 
-    public void setAverageScore(double averageScore) {
+    /**
+     * setter for average score
+     */
+    public void setAverageScore(final double averageScore) {
         this.averageScore = averageScore;
     }
 
+    /**
+     * getter for assigned budget
+     */
     public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
     }
 
-    public void setNiceScoreHistory(List<Double> niceScoreHistory) {
+    /**
+     * setter for score history
+     */
+    public void setNiceScoreHistory(final List<Double> niceScoreHistory) {
         this.niceScoreHistory = niceScoreHistory;
     }
 
+    /**
+     * getter for assigned budget
+     */
     public double getAssignedBudget() {
         return assignedBudget;
     }
 
-    public void setAssignedBudget(double assignedBudget) {
+    /**
+     * setter for assigned budget
+     */
+    public void setAssignedBudget(final double assignedBudget) {
         this.assignedBudget = assignedBudget;
     }
 
+    /**
+     * getter for received gifts
+     */
     public List<Gift> getReceivedGifts() {
         return receivedGifts;
     }
 
-    public void setReceivedGifts(List<Gift> receivedGifts) {
+    /**
+     * setter for received gifts
+     */
+    public void setReceivedGifts(final List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }
 }

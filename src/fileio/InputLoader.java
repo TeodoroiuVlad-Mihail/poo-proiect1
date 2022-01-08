@@ -5,9 +5,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import reading.Child;
-import reading.ChildUpdates;
-import reading.ChildrenUpdates;
 import reading.Gift;
 import utils.Utils;
 
@@ -106,7 +103,8 @@ public final class InputLoader {
             if (jsonChanges != null) {
                 for (Object jsonChange : jsonChanges) {
 
-                    JSONArray jsonNewChildren = ((JSONArray) ((JSONObject) jsonChange).get("newChildren"));
+                    JSONArray jsonNewChildren =
+                            ((JSONArray) ((JSONObject) jsonChange).get("newChildren"));
                     ArrayList<ChildrenInputData> newChildren = new ArrayList<>();
                     if (jsonNewChildren != null) {
                         for (Object jsonNewChild : jsonNewChildren) {
@@ -118,7 +116,8 @@ public final class InputLoader {
                                     (int) ((long) ((JSONObject) jsonNewChild).get(Constants.AGE)),
                                     Utils.convertJSONArray((JSONArray) ((JSONObject) jsonNewChild)
                                             .get(Constants.GIFTSPREFERENCES)),
-                                    (int) ((long) ((JSONObject) jsonNewChild).get(Constants.NICESCORE))
+                                    (int) ((long)
+                                            ((JSONObject) jsonNewChild).get(Constants.NICESCORE))
                             ));
                         }
                     }
@@ -127,20 +126,23 @@ public final class InputLoader {
                     }
 
                     //Construct the Children updates
-                    JSONArray jsonChildrenUpdates = ((JSONArray) ((JSONObject) jsonChange).get("childrenUpdates"));
+                    JSONArray jsonChildrenUpdates =
+                            ((JSONArray) ((JSONObject) jsonChange).get("childrenUpdates"));
                     ArrayList<ChildrenUpdatesInputData> childrenUpdates = new ArrayList<>();
                     if (jsonChildrenUpdates != null) {
                         for (Object jsonChildrenUpdate : jsonChildrenUpdates) {
                             double niceScore;
                             if (((JSONObject) jsonChildrenUpdate).get("niceScore") != null) {
-                                niceScore = (double) ((long) ((JSONObject) jsonChildrenUpdate).get("niceScore"));
+                                niceScore = (double) ((long)
+                                        ((JSONObject) jsonChildrenUpdate).get("niceScore"));
                             } else {
                                 niceScore = -1;
                             }
                             childrenUpdates.add(new ChildrenUpdatesInputData(
                                     (int) ((long) ((JSONObject) jsonChildrenUpdate).get("id")),
                                     niceScore,
-                                    Utils.convertJSONArray((JSONArray) ((JSONObject) jsonChildrenUpdate)
+                                    Utils.convertJSONArray((JSONArray)
+                                            ((JSONObject) jsonChildrenUpdate)
                                             .get(Constants.GIFTSPREFERENCES))
                             ));
                         }
@@ -152,7 +154,8 @@ public final class InputLoader {
 
                     changes.add(new ChangesInputData(
                             (double) ((long) ((JSONObject) jsonChange).get("newSantaBudget")),
-                            (ArrayList<Gift>) ((JSONArray) ((JSONObject) jsonChange).get("newGifts")),
+                            (ArrayList<Gift>) ((JSONArray) ((JSONObject) jsonChange)
+                                    .get("newGifts")),
                             newChildren,
                             childrenUpdates
                     ));

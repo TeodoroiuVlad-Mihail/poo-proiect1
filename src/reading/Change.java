@@ -12,42 +12,68 @@ public class Change {
     private ArrayList<ChildrenInputData> newChildren;
     private ArrayList<ChildrenUpdatesInputData> childrenUpdates;
 
-    public Change(double newSantaBudget, ArrayList<Gift> newGifts, ArrayList<ChildrenInputData> newChildren, ArrayList<ChildrenUpdatesInputData> childrenUpdates) {
+    public Change(final double newSantaBudget, final ArrayList<Gift> newGifts,
+                  final ArrayList<ChildrenInputData> newChildren,
+                  final ArrayList<ChildrenUpdatesInputData> childrenUpdates) {
         this.newSantaBudget = newSantaBudget;
         this.newGifts = newGifts;
         this.newChildren = newChildren;
         this.childrenUpdates = childrenUpdates;
     }
 
+    /**
+     * getter for the new santa budget of the year
+     */
     public double getNewSantaBudget() {
         return newSantaBudget;
     }
 
-    public void setNewSantaBudget(int newSantaBudget) {
+    /**
+     * setter for the new santa budget of the year
+     */
+    public void setNewSantaBudget(final int newSantaBudget) {
         this.newSantaBudget = newSantaBudget;
     }
 
+    /**
+     * setter for new gifts
+     */
     public ArrayList<Gift> getNewGifts() {
         return newGifts;
     }
 
-    public void setNewGifts(ArrayList<Gift> newGifts) {
+    /**
+     * setter for new gifts
+     */
+    public void setNewGifts(final ArrayList<Gift> newGifts) {
         this.newGifts = newGifts;
     }
 
+    /**
+     * setter for new children
+     */
     public ArrayList<ChildrenInputData> getNewChildren() {
         return newChildren;
     }
 
-    public void setNewChildren(ArrayList<ChildrenInputData> newChildren) {
+    /**
+     * setter for new children
+     */
+    public void setNewChildren(final ArrayList<ChildrenInputData> newChildren) {
         this.newChildren = newChildren;
     }
 
+    /**
+     * getter for children updates
+     */
     public ArrayList<ChildrenUpdatesInputData> getChildrenUpdates() {
         return childrenUpdates;
     }
 
-    public void setChildrenUpdates(ArrayList<ChildrenUpdatesInputData> childrenUpdates) {
+    /**
+     * setter for children updates
+     */
+    public void setChildrenUpdates(final ArrayList<ChildrenUpdatesInputData> childrenUpdates) {
         this.childrenUpdates = childrenUpdates;
     }
 }

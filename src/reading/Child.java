@@ -1,6 +1,5 @@
 package reading;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Child {
@@ -15,9 +14,10 @@ public class Child {
     private double assignedBudget;
     private List<Gift> receivedGifts;
 
-    public Child(int id, String lastName, String firstName, String city, int age,
-                 List<String> giftsPreferences, double averageScore, List<Double> niceScoreHistory,
-                 double assignedBudget, List<Gift> receivedGifts) {
+    public Child(final int id, final String lastName, final String firstName, final String city,
+                 final int age, final List<String> giftsPreferences, final double averageScore,
+                 final List<Double> niceScoreHistory, final double assignedBudget,
+                 final List<Gift> receivedGifts) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -30,112 +30,179 @@ public class Child {
         this.receivedGifts = receivedGifts;
     }
 
+    /**
+     * getter for id
+     */
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    /**
+     * setter for id
+     */
+    public void setId(final int id) {
         this.id = id;
     }
 
+    /**
+     * getter for last name
+     */
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    /**
+     * setter for last name
+     */
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * getter for first name
+     */
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    /**
+     * setter for first name
+     */
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * getter for city
+     */
     public String getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    /**
+     * setter for city
+     */
+    public void setCity(final String city) {
         this.city = city;
     }
 
+    /**
+     * getter for age
+     */
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    /**
+     * setter for age
+     */
+    public void setAge(final int age) {
         this.age = age;
     }
 
+    /**
+     * getter for assigned gift preferences
+     */
     public List<String> getGiftsPreferences() {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(List<String> giftsPreferences) {
+    /**
+     * setter for gift preferences
+     */
+    public void setGiftsPreferences(final List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
 
+    /**
+     * getter for average score
+     */
     public double getAverageScore() {
         return averageScore;
     }
 
-    public void setAverageScore(double averageScore) {
+    /**
+     * setter for average score
+     */
+    public void setAverageScore(final double averageScore) {
         this.averageScore = averageScore;
     }
 
+    /**
+     * getter for assigned budget
+     */
     public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
     }
 
-    public void setNiceScoreHistory(List<Double> niceScoreHistory) {
+    /**
+     * setter for score history
+     */
+    public void setNiceScoreHistory(final List<Double> niceScoreHistory) {
         this.niceScoreHistory = niceScoreHistory;
     }
 
+    /**
+     * getter for assigned budget
+     */
     public double getAssignedBudget() {
         return assignedBudget;
     }
 
-    public void setAssignedBudget(double assignedBudget) {
+    /**
+     * setter for assigned budget
+     */
+    public void setAssignedBudget(final double assignedBudget) {
         this.assignedBudget = assignedBudget;
     }
 
+    /**
+     * getter for received gifts
+     */
     public List<Gift> getReceivedGifts() {
         return receivedGifts;
     }
 
-    public void setReceivedGifts(List<Gift> receivedGifts) {
+    /**
+     * setter for received gifts
+     */
+    public void setReceivedGifts(final List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }
 
-    public String giftsToString(List<String> giftsPreferences) {
+    /**
+     * to also format the preferences properly
+     */
+    public String giftsToString(final List<String> giftsPreferences) {
         String string = new String();
         string = string.concat("[");
         for (int i = 0; i < giftsPreferences.size(); i++) {
             string = string.concat("\"" + giftsPreferences.get(i) + "\"");
-            if (i < giftsPreferences.size() - 1)
+            if (i < giftsPreferences.size() - 1) {
                 string = string.concat(", ");
+            }
         }
         string = string.concat(" ]");
 
         return string;
     }
 
+    /**
+     * toString for children, modified to fit output
+     */
     @Override
     public String toString() {
-        return "{" +
-                "\"id\":" + id +
-                ", \"lastName\": \"" + lastName + '\"' +
-                ", \"firstName\": \"" + firstName + '\"' +
-                ", \"city\": \"" + city + '\"' +
-                ", \"age\":" + age +
-                ", \"giftsPreferences\":" + giftsToString(giftsPreferences) +
-                ", \"averageScore\":" + averageScore +
-                ", \"niceScoreHistory\":" + niceScoreHistory +
-                ", \"assignedBudget\":" + assignedBudget +
-                ", \"receivedGifts\":" + receivedGifts +
-                '}';
+        return "{"
+                + "\"id\":" + id
+                + ", \"lastName\": \"" + lastName + '\"'
+                + ", \"firstName\": \"" + firstName + '\"'
+                + ", \"city\": \"" + city + '\"'
+                + ", \"age\":" + age
+                + ", \"giftsPreferences\":" + giftsToString(giftsPreferences)
+                + ", \"averageScore\":" + averageScore
+                + ", \"niceScoreHistory\":" + niceScoreHistory
+                + ", \"assignedBudget\":" + assignedBudget
+                + ", \"receivedGifts\":" + receivedGifts
+                + '}';
     }
 }

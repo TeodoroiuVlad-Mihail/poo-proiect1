@@ -1,15 +1,10 @@
 package utils;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import common.Constants;
 import enums.Category;
 import enums.Cities;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.LinkedHashMap;
 
 /**
  * The class contains static methods that helps with parsing.

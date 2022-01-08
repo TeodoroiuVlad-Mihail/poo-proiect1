@@ -33,6 +33,14 @@ public final class Constants {
     public static final String PRICE = "price";
     public static final String CATEGORY = "category";
 
+    //because "magic numbers"
+    public static final int BABYLIMIT = 5;
+    public static final int KIDLIMIT = 12;
+    public static final int TEENLIMIT = 18;
+
+    public static final int BABYDEFAULTSCORE = 10;
+    public static final int BIGFOFFNUMBER = 100000000;
+
 
     private Constants() {
         //constructor for checkstyle

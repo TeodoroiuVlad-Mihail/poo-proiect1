@@ -2,8 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/commands/AnnualUpdateCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ref/967beba3419f7f5c224ef35b44fc6745.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/common/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/common/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/ChangesInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/ChangesInputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/ChildrenInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/ChildrenInputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/ChildrenUpdatesInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/ChildrenUpdatesInputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/GiftsInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/GiftsInputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/Input.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/Writer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/Writer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Change.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Change.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Changes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Changes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Child.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Child.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/ChildUpdates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/ChildUpdates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Children.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Children.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/ChildrenUpdates.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/ChildrenUpdates.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Gift.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Gift.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Gifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Gifts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/updating/UpdateChildren.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/utils/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/utils/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/writing/Write.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/writing/Write.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ref/83adf96224f15dbd691059d2a32aae3f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/ChangesInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/ChangesInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/ChildrenInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/ChildrenInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/ChildrenUpdatesInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/ChildrenUpdatesInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/GiftsInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/GiftsInputData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/InputLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/InputLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/Writer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/Writer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Change.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Change.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Changes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Changes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Child.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/ChildUpdates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/ChildUpdates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Children.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Children.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/ChildrenUpdates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/ChildrenUpdates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Gift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Gift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Gifts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Gifts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/updating/UpdateChildren.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updating/AnnualUpdates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/writing/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/writing/Write.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +57,7 @@
       <list>
         <option value="Kotlin Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -50,6 +93,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -86,7 +130,7 @@
       <workItem from="1641325264675" duration="12663000" />
       <workItem from="1641410322942" duration="7997000" />
       <workItem from="1641486837293" duration="15528000" />
-      <workItem from="1641562933677" duration="17072000" />
+      <workItem from="1641562933677" duration="25407000" />
     </task>
     <servers />
   </component>

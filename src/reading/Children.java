@@ -10,7 +10,7 @@ import java.util.List;
  */
 
 public class Children {
-    public ArrayList<Child> children = new ArrayList<>();
+    private ArrayList<Child> children = new ArrayList<>();
 
     public Children(final List<ChildrenInputData> list) {
         for (ChildrenInputData i : list) {
@@ -21,4 +21,10 @@ public class Children {
         }
     }
 
+    /**
+     * getter for the children
+     */
+    public ArrayList<Child> getChildren() {
+        return children;
+    }
 }

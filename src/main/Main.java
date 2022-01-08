@@ -2,9 +2,19 @@ package main;
 
 import checker.Checker;
 import common.Constants;
-import fileio.*;
+import fileio.ChildrenInputData;
+import fileio.ChildrenUpdatesInputData;
+import fileio.Input;
+import fileio.InputLoader;
+import fileio.Writer;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
+import reading.Changes;
+import reading.Children;
+import reading.Gifts;
+import updating.AnnualUpdates;
+import writing.Write;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,14 +23,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Objects;
-
-//added by me
-//import fileio.ActionInputData;
-import org.json.simple.parser.ParseException;
-import reading.*;
-import updating.UpdateChildren;
-import writing.Write;
-//import fileio.Writer;
 
 /**
  * Class used to run the code
@@ -93,33 +95,35 @@ public final class Main {
         JSONArray arrayResult = new JSONArray();
 
         //Calculate stuff and print for the year 0
-        UpdateChildren updateChildren = new UpdateChildren(children, santaGiftsList);
+        AnnualUpdates annualUpdates = new AnnualUpdates(children, santaGiftsList);
 
 
         JSONObject object = null;
-        updateChildren.RemoveYoungAdults(children);
-        updateChildren.CalculateAverageScore(children);
-        updateChildren.CalculateKidBudget(children, santaBudget);
-        updateChildren.GiveChildrenGifts(children, santaGiftsList);
+        annualUpdates.removeYoungAdults(children);
+        annualUpdates.calculateAverageScore(children);
+        annualUpdates.calculateKidBudget(children, santaBudget);
+        annualUpdates.giveChildrenGifts(children, santaGiftsList);
         object = write.returnChildren();
         arrayResult.add(arrayResult.size(), object);
 
         for (int i = 1; i <= numberOfYears; i++) {
-            santaBudget = changesList.changes.get(i - 1).getNewSantaBudget();
+            santaBudget = changesList.getChanges().get(i - 1).getNewSantaBudget();
 
-            updateChildren.GrowChildren(children);
+            annualUpdates.growChildren(children);
 
-            ArrayList<ChildrenInputData> newChildren = changesList.changes.get(i - 1).getNewChildren();
-            updateChildren.AddChildren(children, newChildren);
+            ArrayList<ChildrenInputData> newChildren =
+                    changesList.getChanges().get(i - 1).getNewChildren();
+            annualUpdates.addChildren(children, newChildren);
 
-            updateChildren.RemoveYoungAdults(children);
+            annualUpdates.removeYoungAdults(children);
 
-            ArrayList<ChildrenUpdatesInputData> childrenUpdates = changesList.changes.get(i - 1).getChildrenUpdates();
-            updateChildren.UpdateChildren(children, childrenUpdates);
+            ArrayList<ChildrenUpdatesInputData> childrenUpdates =
+                    changesList.getChanges().get(i - 1).getChildrenUpdates();
+            annualUpdates.updateChildren(children, childrenUpdates);
 
-            updateChildren.CalculateAverageScore(children);
-            updateChildren.CalculateKidBudget(children, santaBudget);
-            updateChildren.GiveChildrenGifts(children, santaGiftsList);
+            annualUpdates.calculateAverageScore(children);
+            annualUpdates.calculateKidBudget(children, santaBudget);
+            annualUpdates.giveChildrenGifts(children, santaGiftsList);
             object = write.returnChildren();
             arrayResult.add(arrayResult.size(), object);
         }
