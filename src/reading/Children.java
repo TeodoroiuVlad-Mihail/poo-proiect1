@@ -1,5 +1,6 @@
 package reading;
 
+import builder.Child;
 import fileio.ChildrenInputData;
 
 import java.util.ArrayList;
@@ -14,9 +15,12 @@ public class Children {
 
     public Children(final List<ChildrenInputData> list) {
         for (ChildrenInputData i : list) {
-            Child child = new Child(i.getId(), i.getLastName(), i.getFirstName(), i.getCity(),
-                    i.getAge(), i.getGiftsPreferences(), i.getAverageScore(),
-                    i.getNiceScoreHistory(), i.getAssignedBudget(), i.getReceivedGifts());
+            Child child = new Child.ChildBuilder(i.getId(), i.getLastName(), i.getFirstName(),
+                    i.getCity(), i.getAge(), i.getGiftsPreferences(), i.getAverageScore())
+                    .niceScoreHistory(i.getNiceScoreHistory())
+                    .assignedBudget(i.getAssignedBudget())
+                    .receivedGifts(i.getReceivedGifts())
+                    .build();
             children.add(child);
         }
     }

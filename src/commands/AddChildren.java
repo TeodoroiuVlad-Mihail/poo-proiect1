@@ -1,7 +1,7 @@
 package commands;
 
 import fileio.ChildrenInputData;
-import reading.Child;
+import builder.Child;
 import reading.Children;
 
 import java.util.ArrayList;
@@ -24,21 +24,27 @@ public class AddChildren implements AnnualUpdateCommand {
             int ok = 0;
             for (int i = 0; i < children.getChildren().size(); i++) {
                 if (newChild.getId() < children.getChildren().get(i).getId()) {
-                    children.getChildren().add(i, new Child(newChild.getId(),
+                    children.getChildren().add(i, new Child.ChildBuilder(newChild.getId(),
                             newChild.getLastName(), newChild.getFirstName(), newChild.getCity(),
                             newChild.getAge(), newChild.getGiftsPreferences(),
-                            newChild.getAverageScore(), newChild.getNiceScoreHistory(),
-                            newChild.getAssignedBudget(), newChild.getReceivedGifts()));
+                            newChild.getAverageScore())
+                            .niceScoreHistory(newChild.getNiceScoreHistory())
+                            .assignedBudget(newChild.getAssignedBudget())
+                            .receivedGifts(newChild.getReceivedGifts())
+                            .build());
                     ok = 1;
                     i = children.getChildren().size();
                 }
             }
             if (ok == 0) {
-                children.getChildren().add(new Child(newChild.getId(), newChild.getLastName(),
-                        newChild.getFirstName(), newChild.getCity(), newChild.getAge(),
-                        newChild.getGiftsPreferences(), newChild.getAverageScore(),
-                        newChild.getNiceScoreHistory(), newChild.getAssignedBudget(),
-                        newChild.getReceivedGifts()));
+                children.getChildren().add(new Child.ChildBuilder(newChild.getId(),
+                                newChild.getLastName(), newChild.getFirstName(),
+                                newChild.getCity(), newChild.getAge(),
+                                newChild.getGiftsPreferences(), newChild.getAverageScore())
+                                .niceScoreHistory(newChild.getNiceScoreHistory())
+                                .assignedBudget(newChild.getAssignedBudget())
+                                .receivedGifts(newChild.getReceivedGifts())
+                                .build());
             }
         }
 

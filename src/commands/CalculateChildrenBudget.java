@@ -1,7 +1,7 @@
 package commands;
 
 
-import reading.Child;
+import builder.Child;
 import reading.Children;
 
 public class CalculateChildrenBudget implements AnnualUpdateCommand {

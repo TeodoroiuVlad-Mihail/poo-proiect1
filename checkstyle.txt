@@ -6,6 +6,5 @@ Starting audit...
 [ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:96:33: Avoid nested blocks. [AvoidNestedBlocks]
 [ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:99:39: Avoid nested blocks. [AvoidNestedBlocks]
 [ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:102:35: Avoid nested blocks. [AvoidNestedBlocks]
-[ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\reading\Child.java:176:52: 'giftsPreferences' hides a field. [HiddenField]
 Audit done.
-Checkstyle ends with 8 errors.
+Checkstyle ends with 7 errors.

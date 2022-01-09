@@ -3,9 +3,20 @@ Teodoroiu Vlad-Mihail
 325CA
 
 Pentru comenzi de schimbare de date, am folosit Command Pattern
+Iar pentru "creerea" copiilor, am folosit Builder Pattern
 
 
 foldere din src:
+
+builder
+contine builderele pentru anumite clase
+momentan doar pentru copii deoarece cadorile au toate campurile obligatorii la citirea
+datelor initiale
+
+	Child
+	contine clasa child si metoda builder pentru child
+	
+
 
 checker
 dat de skelet
@@ -116,11 +127,8 @@ folder care contine toate clasele de date
 	Changes
 	contine lista schimbarilor pe ani
 	
-	Child
-	clasa de copil
-	
 	Children
-	clasa de lista de copii
+	clasa de lista de copii, face referinta la clasa de copii din builder
 	
 	ChildrenUpdates
 	clasa care contine lista de schimbare de copii

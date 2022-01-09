@@ -2,9 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/builder/Child.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/AddChildren.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/AddChildren.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/CalculateAverageScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/CalculateAverageScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/CalculateChildrenBudget.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/CalculateChildrenBudget.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/UpdateChildren.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/UpdateChildren.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/giveChildrenGifts.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/giveChildrenGifts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/growChildren.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/growChildren.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/commands/removeYoungAdults.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/commands/removeYoungAdults.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Child.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/reading/Children.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/reading/Children.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/writing/Write.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/writing/Write.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddChildren.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddChildren.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CalculateAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CalculateAverageScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/CalculateChildrenBudget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/CalculateChildrenBudget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/UpdateChildren.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateChildren.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Child.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reading/Children.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reading/Children.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/writing/Write.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/writing/Write.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +111,10 @@
       <workItem from="1641562933677" duration="33814000" />
       <workItem from="1641650988373" duration="7000" />
       <workItem from="1641651022136" duration="1983000" />
-      <workItem from="1641653142183" duration="916000" />
+      <workItem from="1641653142183" duration="1043000" />
+      <workItem from="1641655001002" duration="193000" />
+      <workItem from="1641655261579" duration="595000" />
+      <workItem from="1641736573851" duration="2699000" />
     </task>
     <servers />
   </component>

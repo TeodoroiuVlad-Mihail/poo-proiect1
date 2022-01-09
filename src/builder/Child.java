@@ -1,8 +1,11 @@
-package reading;
+package builder;
+
+import reading.Gift;
 
 import java.util.List;
 
 public class Child {
+    //mandatory (the ones we are given when initializing a child)
     private int id;
     private String lastName;
     private String firstName;
@@ -10,24 +13,22 @@ public class Child {
     private int age;
     private List<String> giftsPreferences;
     private double averageScore;
+    //optional (the ones not mandatory for child "creation")
     private List<Double> niceScoreHistory;
     private double assignedBudget;
     private List<Gift> receivedGifts;
 
-    public Child(final int id, final String lastName, final String firstName, final String city,
-                 final int age, final List<String> giftsPreferences, final double averageScore,
-                 final List<Double> niceScoreHistory, final double assignedBudget,
-                 final List<Gift> receivedGifts) {
-        this.id = id;
-        this.lastName = lastName;
-        this.firstName = firstName;
-        this.city = city;
-        this.age = age;
-        this.giftsPreferences = giftsPreferences;
-        this.averageScore = averageScore;
-        this.niceScoreHistory = niceScoreHistory;
-        this.assignedBudget = assignedBudget;
-        this.receivedGifts = receivedGifts;
+    public Child(final ChildBuilder childBuilder) {
+        this.id = childBuilder.id;
+        this.lastName = childBuilder.lastName;
+        this.firstName = childBuilder.firstName;
+        this.city = childBuilder.city;
+        this.age = childBuilder.age;
+        this.giftsPreferences = childBuilder.giftsPreferences;
+        this.averageScore = childBuilder.averageScore;
+        this.niceScoreHistory = childBuilder.niceScoreHistory;
+        this.assignedBudget = childBuilder.assignedBudget;
+        this.receivedGifts = childBuilder.receivedGifts;
     }
 
     /**
@@ -173,12 +174,12 @@ public class Child {
     /**
      * to also format the preferences properly
      */
-    public String giftsToString(final List<String> giftsPreferences) {
+    public String giftsToString(final List<String> pGiftsPreferences) {
         String string = new String();
         string = string.concat("[");
-        for (int i = 0; i < giftsPreferences.size(); i++) {
-            string = string.concat("\"" + giftsPreferences.get(i) + "\"");
-            if (i < giftsPreferences.size() - 1) {
+        for (int i = 0; i < pGiftsPreferences.size(); i++) {
+            string = string.concat("\"" + pGiftsPreferences.get(i) + "\"");
+            if (i < pGiftsPreferences.size() - 1) {
                 string = string.concat(", ");
             }
         }
@@ -204,5 +205,63 @@ public class Child {
                 + ", \"assignedBudget\":" + assignedBudget
                 + ", \"receivedGifts\":" + receivedGifts
                 + '}';
+    }
+
+    public static class ChildBuilder {
+        //mandatory (the ones we are given when initializing a child)
+        private int id;
+        private String lastName;
+        private String firstName;
+        private String city;
+        private int age;
+        private List<String> giftsPreferences;
+        private double averageScore;
+        //optional (the ones not mandatory for child "creation")
+        private List<Double> niceScoreHistory = null;
+        private double assignedBudget = 0;
+        private List<Gift> receivedGifts = null;
+
+        public ChildBuilder(final int id, final String lastName, final String firstName,
+                            final String city, final int age, final List<String> giftsPreferences,
+                            final double averageScore) {
+            this.id = id;
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.city = city;
+            this.age = age;
+            this.giftsPreferences = giftsPreferences;
+            this.averageScore = averageScore;
+        }
+
+        /**
+         * adds the nice score history
+         */
+        public ChildBuilder niceScoreHistory(final List<Double> pNiceScoreHistory) {
+            this.niceScoreHistory = pNiceScoreHistory;
+            return this;
+        }
+
+        /**
+         * adds the assigned budget
+         */
+        public ChildBuilder assignedBudget(final double pAssignedBudget) {
+            this.assignedBudget = pAssignedBudget;
+            return this;
+        }
+
+        /**
+         * adds the received gifts list
+         */
+        public ChildBuilder receivedGifts(final List<Gift> pReceivedGifts) {
+            this.receivedGifts = pReceivedGifts;
+            return this;
+        }
+
+        /**
+         * the method that "builds" the children
+         */
+        public Child build() {
+            return new Child(this);
+        }
     }
 }

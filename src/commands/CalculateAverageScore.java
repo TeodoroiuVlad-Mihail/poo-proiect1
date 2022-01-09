@@ -1,7 +1,7 @@
 package commands;
 
 import common.Constants;
-import reading.Child;
+import builder.Child;
 import reading.Children;
 
 public class CalculateAverageScore implements AnnualUpdateCommand {
