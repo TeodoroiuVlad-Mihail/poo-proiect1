@@ -1,2 +1,10 @@
 Starting audit...
+[ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:84:32: Avoid nested blocks. [AvoidNestedBlocks]
+[ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:87:43: Avoid nested blocks. [AvoidNestedBlocks]
+[ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:90:45: Avoid nested blocks. [AvoidNestedBlocks]
+[ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:93:39: Avoid nested blocks. [AvoidNestedBlocks]
+[ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:96:33: Avoid nested blocks. [AvoidNestedBlocks]
+[ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:99:39: Avoid nested blocks. [AvoidNestedBlocks]
+[ERROR] C:\Users\Vlad\IdeaProjects\poo proiect1\.\src\main\Client.java:102:35: Avoid nested blocks. [AvoidNestedBlocks]
 Audit done.
+Checkstyle ends with 7 errors.

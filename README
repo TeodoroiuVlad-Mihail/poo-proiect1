@@ -1,0 +1,161 @@
+Proiect 1 Etapa 1 POO
+Teodoroiu Vlad-Mihail
+325CA
+
+Pentru comenzi de schimbare de date, am folosit Command Pattern
+Iar pentru "creerea" copiilor, am folosit Builder Pattern
+
+
+foldere din src:
+
+builder
+contine builderele pentru anumite clase
+momentan doar pentru copii deoarece cadorile au toate campurile obligatorii la citirea
+datelor initiale
+
+	Child
+	contine clasa child si metoda builder pentru child
+	
+
+
+checker
+dat de skelet
+
+commands
+under toate comenzile sunt stocate
+
+	AddChildren
+	destul de simplu, parcurge prin lista de copii noi de adaugati si il adauga pe fiercare
+	in functie de id-ul lor, daca gaseste un copil cu id mai mic, pune noul copil in fata lui
+	daca nu, pune noul copil la final
+	
+	AnnualChildrenCommand
+	interfata prin care se acceseaza toate comenzile prin execute
+	
+	CalculateAverageScore
+	calculeaza scorul de cumintenie a fiecarui copil in functie de grupa sa de varsta
+	
+	CalculateChildrenBudget
+	prima data calculeaza scorul total de cumintenie al copiilor pe acel an, si imparte bugetul
+	total la acer scor total, obtinand unitatea de buget
+	apoi aloca fiecarui copil un buget inmultind unitatea de buget cu scorul lor de cumintenie
+	
+	CommandType
+	transforma un string cu numele comenzii cerute in comanda propiu-zisa
+	
+	GiveChildrenGifts
+	trece prin fiecare copil, apoi trece prin lista lor de preferinte si cauta cel mai ieftin
+	cadou care poate fi cumparat pentru fiecare preferinta
+	daca exista un asemena cadou si poate fi cumparat, este adaugat, daca nu, nu este nici un
+	cadou adaugat pentru acea preferinta
+	
+	GrowChildren
+	crete varsta pentru fiecare copil cu 1, nimic mult de spus
+	
+	RemoveYoungAdults
+	trece prin lista de copii si ii elimina din lista pe cei cu varsta mai mare de 18 ani
+	
+	UpdateChildren
+	trece prin lista de copii, si apoi trece prin lista de update-uri de copii
+	daca gaseste id-uri care se potrivesc, copilului ii se adauga la istoria de scor de cumintenie
+	noul scor si ii se updateaza si preferintele
+
+
+common
+dat de scelet, Constants e putin modificat de mine pentru a evita
+cat mai multa hardcodare in citire
+
+
+enums
+dat de schelet
+
+
+fileio
+luat din skeletul temei 1 si modificat pentru a putea citi datele din acest proiect
+
+	ChangesInputData
+	clasa generala care contine schimbarile, cum ar fi bugetul anual nou, cadourile noi,
+	copii noi si modificarile pentru copii existenti
+	
+	ChildrenInputData
+	clasa pentru citirea copiilor
+	
+	ChildrenUpdateInputData
+	deoarece cand updatam copii primim doar id, un scor de cumintenie nou si noi preferinte
+	de cadouri, avem o clasa separata
+	
+	GiftsInputData
+	clasa pentru citirea cadourilor
+	
+	Input
+	clasa care leaga impreuna subclasele din citire, numarul de ani, bugetul initial,
+	copiii initiali, cadourile initiale si schimbarile
+	
+	InputLoader
+	o nebunie totala, clasa in care citim fisierul json si il convertim in date,
+	prima data cele initiale, apoi schimbarile
+	
+	Writer
+	clasa pentru scris in text
+	
+	
+main
+
+	Client
+	clientul din Command Pattern, stocheaza toate datele si in functie de ce ii se cere
+	trimite mai departe invoker-ului o comanda
+	
+	Invoker
+	invoker-ul din Command Patter, datoria lui este sa execute, sa invoce, comanda dorita
+	
+	Main
+	este format din doua metode
+		main
+		prin care "calculam" caile de input si output, aproape identic cu cel din tema 1
+		
+		action
+		aici imbinam toate datele citite si pe masura ce parcurgem anii cu toate nebuniile de
+		comenzi 
+		apoi scriem in fisierul .json folosind WRITER
+		
+reading
+folder care contine toate clasele de date
+
+	Change
+	contine datele pentru o schimbare de ani
+	
+	Changes
+	contine lista schimbarilor pe ani
+	
+	Children
+	clasa de lista de copii, face referinta la clasa de copii din builder
+	
+	ChildrenUpdates
+	clasa care contine lista de schimbare de copii
+	
+	ChildrenUpdates
+	clasa de copil care contine doar schimbarile posibile
+	
+	Gift
+	clasa de cadou 
+	
+	Gifts
+	clasa de lista de cadouri
+
+
+utils
+date de skelet
+
+
+writing
+contine Write
+	
+	Write
+	transforma o instanta de copil intr-un json object pe care il pune in jsonArray-ul
+	care va fi scris in fisier
+	Da stiu e similar in nume cu Writer, cred ca ar fi mers mai bine numele de ToJson dar
+	pentru ca a fost preluat si modificat din skeletul pentru tema 1(cred) l-am pastrat asa
+	cel putin e intr-un alt folder
+	
+
+Multumesc mult pentru rabdarea acordata sa cititi acest readme.
